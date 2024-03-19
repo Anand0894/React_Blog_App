@@ -8,8 +8,9 @@ export class Service{
     
     constructor(){
         this.client
-        .setEndpoint(conf.appwriteUrl)
-        .setProject(conf.appwriteProjectId);
+        .setEndpoint("https://cloud.appwrite.io/v1")
+        .setProject("65e17eb41a7e4ad2a90f")
+        console.log(conf.appwriteDatabaseId)
         this.databases = new Databases(this.client);
         this.bucket = new Storage(this.client);
     }
@@ -30,6 +31,7 @@ export class Service{
             )
         } catch (error) {
             console.log("Appwrite serive :: createPost :: error", error);
+
         }
     }
 
